@@ -1,6 +1,6 @@
 import { onMounted, ref, watchEffect } from 'vue'
 
-export function refHistory(source) {
+export function useRefHistory(source) {
   const history = ref([])
   onMounted(() => {
     console.log('onMounted')
