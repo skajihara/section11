@@ -1,7 +1,10 @@
-import { ref, watchEffect } from 'vue'
+import { onMounted, ref, watchEffect } from 'vue'
 
 export function refHistory(source) {
   const history = ref([])
+  onMounted(() => {
+    console.log('onMounted')
+  })
   watchEffect(() => {
     history.value.push(source.value)
   })
